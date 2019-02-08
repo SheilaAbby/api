@@ -1,18 +1,13 @@
 # register blue-prints here
-import os
+
 from flask import Flask
-from config import app_config  # local import
+from app import views
 
+# Initialize application
+app = Flask(__name__, static_folder=None)
 
-def create_app(config_name):
-    app = Flask(__name__, static_folder=None)
-    app_settings = os.getenv(
-        'APP_SETTINGS',
-        'config.DevelopmentConfig'
-    )
-    app.config.from_object(app_settings)
+app.register_blueprint(views.app_route)
 
-    return app
 
 
 

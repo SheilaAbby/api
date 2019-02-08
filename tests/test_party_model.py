@@ -16,16 +16,15 @@ class TestParty(unittest.TestCase):
         self.data = {  # party data
                 "id": 1,
                 "name": "jubilee",
+                "hqaddress": "hqaddress",
                 "logoUrl": "localhost"
 
         }
         self.da = {
-            {
                 "id": 1,
                 "name": "jubilee",
                 "logoUrl": "localhost"
             }
-        }
 
     #  test case for creating a party
     def test_creating_party(self):

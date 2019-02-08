@@ -6,25 +6,19 @@ from run import app
 party_list = []
 
 
-class PartyList:
+class PartyModel:
     """This class represents the party model data"""
-    def __init__(self, name, hdquarters, logourl):
-        self.name = name
-        self.hdquarters = hdquarters
-        self.logoUrl = logourl
+    def __init__(self):
+        self.db = party_list
 
-    def creating_party(self):
-
-        data = request.get_json()
-
+    def creating_party(self, name, hqaddress, logourl):
         party_item = {
-            'id': len(party_list) + 1,
-            'name': self.name,
-            'hdQuaters': self.hdquaters,
-            'logoUrl': self.logourl
+            "id": len(self.db) + 1,
+            "name": self.name,
+            "hqAddress": self.hqaddress,
+            "logoUrl": self.logourl
         }
-        self.register.append(party_item)
-
-
+        self.db.append(party_item)
+        return self.db
 
 
